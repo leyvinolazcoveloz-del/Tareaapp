@@ -1,125 +1,256 @@
-/* Estilos generales */
+/* ------------------------------
+ESTILOS GENERALES
+-------------------------------- */
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
-}
+  }
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 40px 0;
-  text-align: center;
-  background: url(imagenes/fondo.jpg) no-repeat center center/ cover;
+min-height: 100vh;
+padding: 40px 20px;
+
+display: flex;
+justify-content: center;
+align-items: center;
+
+background: url("imagenes/fondo.jpg") no-repeat center center / cover;
+background-attachment: fixed;
 }
 
-/* Contenedor principal */
+/* ------------------------------
+CONTENEDOR PRINCIPAL
+-------------------------------- */
 
 .contenedor {
-  width: 700px;
-  min-height: 500px;
-  background-color: white;
-  padding: 40px;
-  border: 5px solid black;
-  border-radius: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-items: center;
+width: 700px;
+min-height: 500px;
+
+padding: 45px;
+
+background: rgba(255, 255, 255, 0.94);
+
+border: 2px solid rgba(255, 255, 255, 0.8);
+border-radius: 25px;
+
+box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+
+display: flex;
+flex-direction: column;
+align-items: center;
 }
 
-/* Titulo */
+/* ------------------------------
+TITULO
+-------------------------------- */
 
 h1 {
-  font-size: 50px;
-  font-weight: bold;
+font-size: 50px;
+font-weight: 900;
+color: #202020;
+margin-bottom: 5px;
 }
 
-/* Ingresar texto */
+.subtitulo {
+font-size: 17px;
+color: #666;
+margin-bottom: 25px;
+}
+
+/* ------------------------------
+ENTRADA DE TAREA
+-------------------------------- */
+
+.entrada-tarea {
+width: 100%;
+
+display: flex;
+flex-direction: column;
+align-items: center;
+}
 
 input {
-  width: 80%;
-  height: 50px;
-  font-size: 25px;
-  margin: 20px;
-  padding: 10px;
-  border: 4px solid #404040;
-  border-radius: 10px;
+width: 90%;
+height: 55px;
+
+padding: 12px 18px;
+
+font-size: 20px;
+
+border: 2px solid #bdbdbd;
+border-radius: 12px;
+
+outline: none;
+
+transition: 0.2s;
 }
 
-/* Boton */
+input:focus {
+border-color: #1312a8;
+box-shadow: 0 0 0 3px rgba(19, 18, 168, 0.12);
+}
+
+input::placeholder {
+color: #999;
+}
+
+/* ------------------------------
+BOTON
+-------------------------------- */
 
 button {
-  width: 150px;
-  height: 60px;
-  padding: 10px;
-  color: white;
-  background-color: #1312a8;
-  font-size: 22px;
-  border-radius: 20px;
-  border: 0px solid black;
-  cursor: pointer;
-  user-select: none;
+width: 180px;
+height: 52px;
+
+margin-top: 15px;
+
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 8px;
+
+color: white;
+background-color: #1312a8;
+
+font-size: 18px;
+font-weight: 700;
+
+border: none;
+border-radius: 12px;
+
+cursor: pointer;
+
+transition: 0.2s;
 }
 
-/* Lista de tareas */
+button:hover {
+background-color: #2524d4;
+transform: translateY(-2px);
+box-shadow: 0 6px 15px rgba(19, 18, 168, 0.25);
+}
+
+button:active {
+transform: translateY(0);
+}
+
+/* ------------------------------
+LISTA DE TAREAS
+-------------------------------- */
 
 #lista-de-tareas {
-  width: 80%;
-  margin-top: 20px;
+width: 90%;
+margin-top: 30px;
 }
 
-/* Tareas individuales */
+/* ------------------------------
+TAREAS INDIVIDUALES
+-------------------------------- */
 
 .tarea {
-  width: 100%;
-  min-height: 70px;
-  font-size: 25px;
-  padding: 10px;
-  margin-top: 10px;
-  color: white;
-  background-color: #40a645;
-  border: 2px solid rgb(0, 0, 0);
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  text-align: left;
+width: 100%;
+min-height: 65px;
+
+padding: 10px 15px;
+margin-top: 12px;
+
+color: white;
+background-color: #40a645;
+
+border-radius: 12px;
+
+display: flex;
+align-items: center;
+justify-content: space-between;
+
+text-align: left;
+
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+
+transition: 0.2s;
 }
 
-/* Estilo para tarea completada */
-
-.tarea.completada {
-  text-decoration: line-through;
-  background-color: rgb(54, 177, 45);
-  border: none;
+.tarea:hover {
+transform: translateY(-2px);
+box-shadow: 0 6px 15px rgba(0, 0, 0, 0.18);
 }
 
 .tarea p {
-  max-width: 350px;
+max-width: 430px;
+font-size: 20px;
+word-wrap: break-word;
 }
 
-/* Iconos */
+/* ------------------------------
+TAREA COMPLETADA
+-------------------------------- */
+
+.tarea.completada {
+text-decoration: line-through;
+background-color: #75b979;
+opacity: 0.75;
+}
+
+/* ------------------------------
+ICONOS
+-------------------------------- */
+
+.iconos {
+display: flex;
+align-items: center;
+}
 
 i {
-  margin: 5px;
-  padding: 10px;
-  cursor: pointer;
+margin: 3px;
+padding: 8px;
+
+cursor: pointer;
+
+border-radius: 8px;
+
+transition: 0.2s;
 }
 
 .icono-completar {
-  color: rgb(90, 98, 90);
+color: #e8e8e8;
 }
 
 .icono-eliminar {
-  color: rgb(255, 255, 255);
+color: white;
 }
 
-.icono-completar:hover,
+.icono-completar:hover {
+color: #222;
+background-color: rgba(255, 255, 255, 0.6);
+}
+
 .icono-eliminar:hover {
-  background-color: rgba(255, 255, 255, 0.523);
+background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* ------------------------------
+ADAPTACIÓN PARA PANTALLAS PEQUEÑAS
+-------------------------------- */
+
+@media (max-width: 750px) {
+
+.contenedor {
+width: 95%;
+padding: 30px 20px;
+}
+
+h1 {
+font-size: 40px;
+}
+
+input,
+#lista-de-tareas {
+width: 100%;
+}
+
+.tarea p {
+max-width: 65%;
+}
 }
